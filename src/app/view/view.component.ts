@@ -8,7 +8,7 @@ import {DataService} from '../data.service';
 })
 export class ViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }
