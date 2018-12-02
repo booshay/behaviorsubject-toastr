@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
+
+  <form #searchForm="ngForm" class="card card-sm">
+    <div class="card-body row no-gutters align-items-center">
+        <div class="col-auto">
+            <i class="fas fa-search h4 text-body"></i>
+        </div>  
+        <div class="col">
+            <input name='input' [(ngModel)]="page" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search for beer">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-lg btn-success" type="submit" (click)="search(page)">Search</button>
+        </div>
+    </div>
+  </form>
+</nav>
+
+ 
