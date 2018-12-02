@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import * as Rx from "rxjs";
+import {BehaviorSubject} from 'rxjs';
 import { MessageService } from './message.service'
 
 
@@ -9,7 +9,7 @@ import { MessageService } from './message.service'
   providedIn: 'root'
 })
 export class DataService {
-   private _data = new Rx.BehaviorSubject (null);
+   private _data = new BehaviorSubject (null);
 
   constructor(private http: HttpClient, private messageService : MessageService) { }
   
