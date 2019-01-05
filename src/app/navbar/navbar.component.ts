@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
-import { MessageService } from '../message.service'
-
+ 
 
 @Component({
   selector: 'app-navbar',
@@ -10,9 +9,9 @@ import { MessageService } from '../message.service'
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private dataService: DataService, private messageService : MessageService) { }
+  constructor(private dataService: DataService) { }
   page:number;
-  info:{};
+ 
   search(page){
     this.dataService.getData(page);
     

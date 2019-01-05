@@ -1,4 +1,4 @@
-import { Component, OnDestroy  } from '@angular/core';
+import { Component, OnDestroy, OnInit  } from '@angular/core';
 import {DataService} from '../data.service';
 import * as Rx from "rxjs";
 
@@ -8,16 +8,18 @@ import * as Rx from "rxjs";
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.css']
 })
-export class ViewComponent implements OnDestroy  {
+export class ViewComponent implements OnDestroy, OnInit  {
     sub: Rx.Subscription;
   info:{};
   
   constructor(private dataService: DataService) { 
-      this.sub = this.dataService.data$.subscribe(data=>this.info=data);
       
   }
 
-  
+  ngOnInit(){
+    this.sub = this.dataService.data$.subscribe(data=>this.info=data);
+
+  }
   
   ngOnDestroy () {
      this.sub.unsubscribe();
